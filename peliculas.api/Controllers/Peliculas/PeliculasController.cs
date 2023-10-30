@@ -5,6 +5,7 @@ using peliculas.utilitarios.Modelos.DTOs.Peliculas;
 
 namespace peliculas.api.Controllers.Peliculas
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class PeliculasController : ControllerBase
@@ -22,7 +23,6 @@ namespace peliculas.api.Controllers.Peliculas
         /// Obtener todo el listado de peliculas
         /// </summary>
         /// <returns>List<PeliculasDTO></PeliculasDTO></returns>
-        [Authorize]
         [HttpGet("/GetAllPeliculas")]
         public async Task<IActionResult> GetAllPeliculas()
         {

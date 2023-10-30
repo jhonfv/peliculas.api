@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using peliculas.data.Interfaces.Autenticacion;
@@ -57,7 +58,7 @@ builder.Services.AddSwaggerGen(opt =>
 
 //JWT
 builder.Services.AddAuthorization();
-builder.Services.AddAuthentication("Bearer").AddJwtBearer(opt =>
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
 {
     var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]));
     var signingCredential = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256Signature);
@@ -95,10 +96,10 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 
-app.MapControllers();
+app.UseAuthentication();
 
 app.UseAuthorization();
 
-app.UseAuthentication();
+app.MapControllers();
 
 app.Run();
