@@ -9,7 +9,7 @@
 
 ## 🌍 URIs de la API
 
-- **Uri de publicación**: peliculasapi-imagineapps.azurewebsites.net/](https://peliculasapi-imagineapps.azurewebsites.net/)
+- **Uri de publicación**: [peliculasapi-imagineapps.azurewebsites.net/](https://peliculasapi-imagineapps.azurewebsites.net/)
 - **Uri de versión**: [peliculasapi-imagineapps.azurewebsites.net/api/version](https://peliculasapi-imagineapps.azurewebsites.net/api/version)
 - **Uri de gestión**: [peliculasapi-imagineapps.azurewebsites.net](https://peliculasapi-imagineapps.azurewebsites.net/)
 
